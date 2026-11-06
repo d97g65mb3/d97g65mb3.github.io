@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>漫蛙漫画免费阅读-在线漫画免费阅读_漫画分类与更新入口</title>
+<meta name="description" content="漫蛙漫画免费阅读主题首页，汇集在线漫画免费阅读入口、漫画分类与更新入口，帮助读者快速找到想看的故事并了解阅读方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f7a4d'/%3E%3Ccircle cx='24' cy='26' r='6' fill='%23d8f5e3'/%3E%3Ccircle cx='40' cy='26' r='6' fill='%23d8f5e3'/%3E%3Cpath d='M20 42c5 5 19 5 24 0' stroke='%23d8f5e3' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#15241d;
+    --ink-soft:#4a5c53;
+    --green:#1f7a4d;
+    --green-deep:#145634;
+    --mint:#eef8f2;
+    --mint-line:#d3ebdd;
+    --paper:#fbfdfb;
+    --card:#ffffff;
+    --accent:#e9a13b;
+    --radius:16px;
+    --shadow:0 8px 24px rgba(21,54,40,.07);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(251,253,251,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--mint-line);
+  }
+  .hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;color:var(--green-deep);font-size:clamp(15px,2.4vw,19px);}
+  .brand .mark{
+    width:38px;height:38px;flex:none;border-radius:12px;
+    background:linear-gradient(140deg,var(--green),#2fa86c);
+    display:grid;place-items:center;box-shadow:0 6px 14px rgba(31,122,77,.25);
+  }
+  .brand .mark svg{width:22px;height:22px;}
+  nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:14px;color:var(--ink-soft);padding:7px 12px;border-radius:999px;
+    transition:background .2s,color .2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:var(--mint);color:var(--green-deep);}
+  .menu-btn{display:none;}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(900px 360px at 88% -10%,#dff3e8 0%,rgba(223,243,232,0) 70%),
+      linear-gradient(180deg,#f4fbf6,#fbfdfb);
+    border-bottom:1px solid var(--mint-line);
+    padding:clamp(34px,6vw,64px) 0 clamp(30px,5vw,54px);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(22px,4vw,48px);align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;color:var(--green-deep);
+    background:#fff;border:1px solid var(--mint-line);
+    padding:6px 14px;border-radius:999px;box-shadow:var(--shadow);
+  }
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  h1{
+    font-size:clamp(26px,4.4vw,42px);
+    line-height:1.28;
+    margin:16px 0 14px;
+    letter-spacing:.5px;
+    color:var(--green-deep);
+    font-weight:900;
+  }
+  .hero p.lead{
+    margin:0 0 22px;color:var(--ink-soft);font-size:clamp(15px,1.7vw,17px);
+    max-width:36em;
+  }
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;transition:transform .15s,box-shadow .2s,background .2s;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(31,122,77,.28);}
+  .btn-primary:hover{background:var(--green-deep);}
+  .btn-ghost{background:#fff;color:var(--green-deep);border-color:var(--mint-line);box-shadow:var(--shadow);}
+  .btn-ghost:hover{background:var(--mint);}
+  .btn-download{
+    background:#fff;color:var(--green-deep);border-color:var(--mint-line);
+    box-shadow:var(--shadow);
+  }
+  .btn-download[aria-disabled="true"]{opacity:.85;pointer-events:none;cursor:default;}
+  .hero-note{margin-top:14px;font-size:13px;color:var(--ink-soft);}
+  .hero-note b{color:var(--green-deep);}
+
+  .hero-art{
+    background:var(--card);border:1px solid var(--mint-line);border-radius:22px;
+    padding:18px;box-shadow:var(--shadow);
+  }
+  .hero-art .frame{
+    border-radius:14px;overflow:hidden;background:var(--mint);
+  }
+  .hero-art .caption{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    margin-top:12px;font-size:13px;color:var(--ink-soft);
+  }
+  .hero-art .caption strong{color:var(--green-deep);}
+
+  /* Section base */
+  section{padding:clamp(36px,5.5vw,62px) 0;}
+  .sec-head{max-width:44em;margin-bottom:clamp(20px,3vw,30px);}
+  .sec-head .eyebrow{
+    font-size:12px;font-weight:800;letter-spacing:2px;color:var(--green);
+    text-transform:uppercase;margin:0 0 8px;
+  }
+  .sec-head h2{
+    font-size:clamp(20px,2.8vw,28px);margin:0 0 10px;color:var(--green-deep);
+    font-weight:800;letter-spacing:.4px;
+  }
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+  /* Quick entries */
+  .entries{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .entry{
+    background:var(--card);border:1px solid var(--mint-line);border-radius:var(--radius);
+    padding:18px 16px;transition:transform .18s,box-shadow .2s,border-color .2s;
+  }
+  .entry:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#bfe2cf;}
+  .entry .ico{
+    width:36px;height:36px;border-radius:10px;background:var(--mint);
+    display:grid;place-items:center;margin-bottom:10px;
+  }
+  .entry .ico svg{width:19px;height:19px;}
+  .entry h3{font-size:15px;margin:0 0 4px;color:var(--ink);font-weight:800;}
+  .entry p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.6;}
+
+  /* Categories + filter */
+  .cat-layout{display:grid;grid-template-columns:1fr;gap:18px;}
+  .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .tools input[type="search"]{
+    flex:1 1 240px;min-width:0;
+    padding:11px 16px;border-radius:999px;border:1px solid var(--mint-line);
+    background:#fff;font-size:14px;color:var(--ink);outline:none;
+    font-family:inherit;
+  }
+  .tools input[type="search"]:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(31,122,77,.12);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    padding:8px 15px;border-radius:999px;border:1px solid var(--mint-line);background:#fff;
+    font-size:13px;color:var(--ink-soft);cursor:pointer;font-family:inherit;
+    transition:all .18s;
+  }
+  .chip:hover{border-color:#bfe2cf;color:var(--green-deep);}
+  .chip[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green);font-weight:700;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px;}
+  .card{
+    background:var(--card);border:1px solid var(--mint-line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .18s,box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .card .thumb{background:var(--mint);aspect-ratio:16/9;position:relative;overflow:hidden;}
+  .card .thumb svg{width:100%;height:100%;}
+  .card .body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .card .tagrow{display:flex;gap:6px;flex-wrap:wrap;}
+  .tag{
+    font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+    background:var(--mint);color:var(--green-deep);letter-spacing:.3px;
+  }
+  .card h3{font-size:16px;margin:2px 0 0;font-weight:800;color:var(--ink);}
+  .card p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.65;}
+  .card .meta{
+    margin-top:auto;padding-top:10px;font-size:12px;color:#7d8f85;
+    display:flex;justify-content:space-between;gap:8px;border-top:1px dashed var(--mint-line);
+  }
+  .empty{
+    grid-column:1/-1;text-align:center;padding:34px 16px;color:var(--ink-soft);
+    background:var(--mint);border-radius:var(--radius);font-size:14px;
+  }
+
+  /* How to read */
+  .read-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,3.5vw,40px);align-items:start;}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .steps li{
+    display:flex;gap:14px;background:var(--card);border:1px solid var(--mint-line);
+    border-radius:var(--radius);padding:16px 18px;
+  }
+  .steps .num{
+    flex:none;width:30px;height:30px;border-radius:9px;background:var(--mint);
+    color:var(--green-deep);font-weight:900;font-size:14px;display:grid;place-items:center;
+  }
+  .steps h3{margin:0 0 3px;font-size:15px;font-weight:800;color:var(--ink);}
+  .steps p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.65;}
+  .aside-box{
+    background:linear-gradient(180deg,#eef8f2,#ffffff);
+    border:1px solid var(--mint-line);border-radius:20px;padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .aside-box h3{margin:0 0 10px;font-size:17px;color:var(--green-deep);font-weight:800;}
+  .aside-box p{margin:0 0 10px;font-size:14px;color:var(--ink-soft);}
+  .aside-box ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+  .aside-box li{margin-bottom:6px;}
+  .aside-box li::marker{color:var(--green);}
+
+  /* Notes / 说明 */
+  .notes{background:var(--mint);border-top:1px solid var(--mint-line);border-bottom:1px solid var(--mint-line);}
+  .note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .note{
+    background:rgba(255,255,255,.75);border:1px solid var(--mint-line);
+    border-radius:var(--radius);padding:18px;
+  }
+  .note h3{margin:0 0 6px;font-size:15px;font-weight:800;color:var(--green-deep);}
+  .note p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+
+  /* Footer */
+  footer.site{
+    background:#12362a;color:#cfe6da;padding:34px 0 26px;font-size:13.5px;
+  }
+  .foot-top{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;align-items:flex-start;}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:16px;letter-spacing:.5px;}
+  .foot-brand .mark{
+    width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.14);
+    display:grid;place-items:center;flex:none;
+  }
+  .foot-brand .mark svg{width:20px;height:20px;}
+  footer.site p{margin:8px 0 0;color:#a9c8b9;max-width:40em;line-height:1.7;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .foot-links a{color:#cfe6da;border-bottom:1px solid transparent;}
+  .foot-links a:hover{color:#fff;border-bottom-color:#8fd0ae;}
+  .foot-bottom{
+    margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    color:#8fb3a2;font-size:12.5px;
+  }
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:520px;}
+    .entries{grid-template-columns:repeat(2,1fr);}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .read-grid{grid-template-columns:1fr;}
+    .note-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    nav.main{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--mint-line);
+      padding:10px 5vw 14px;display:none;flex-direction:column;gap:2px;
+      box-shadow:0 14px 24px rgba(21,54,40,.08);
+    }
+    nav.main.open{display:flex;}
+    nav.main a{padding:11px 12px;border-radius:10px;}
+    .menu-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:40px;height:40px;border-radius:10px;border:1px solid var(--mint-line);
+      background:#fff;cursor:pointer;
+    }
+    .menu-btn svg{width:20px;height:20px;}
+    .hdr{position:relative;}
+    .entries{grid-template-columns:1fr;}
+    .cards{grid-template-columns:1fr;}
+    .brand{font-size:14px;}
+    .hero-art{order:0;}
+    .cta-row .btn{flex:1 1 100%;justify-content:center;}
+    .foot-top{flex-direction:column;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="#top" aria-label="漫蛙漫画免费阅读 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#eafaf0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8.5" cy="9" r="1.6" fill="#eafaf0" stroke="none"/>
+          <circle cx="15.5" cy="9" r="1.6" fill="#eafaf0" stroke="none"/>
+          <path d="M7 15c2.6 2 7.4 2 10 0"/>
+        </svg>
+      </span>
+      <span>漫蛙漫画免费阅读</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="展开导航" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#145634" stroke-width="2" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+    <nav class="main" id="mainNav" aria-label="主导航">
+      <a href="#entries">阅读入口</a>
+      <a href="#categories">漫画分类</a>
+      <a href="#howto">阅读方式</a>
+      <a href="#notes">使用说明</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span>在线漫画 · 免费阅读主题站</span>
+        <h1 id="heroTitle">漫蛙漫画免费阅读</h1>
+        <p class="lead">漫蛙漫画免费阅读面向想随手翻几话的读者：先从分类或搜索找到作品，再进入章节页连续阅读。这里把入口、分类与阅读方式集中在一页，减少来回查找。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#categories">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+            </svg>
+            找漫画开始阅读
+          </a>
+          <a class="btn btn-ghost" href="#howto">了解阅读方式</a>
+          <a class="btn btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+        <p class="hero-note">阅读入口与分类为站内导航；<b>下载</b>功能暂未开放，入口保留待后续替换。</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="frame">
+          <svg viewBox="0 0 480 270" role="img" aria-label="漫画阅读页面示意图">
+            <rect width="480" height="270" fill="#eef8f2"/>
+            <rect x="26" y="24" width="196" height="222" rx="12" fill="#ffffff" stroke="#d3ebdd"/>
+            <rect x="258" y="24" width="196" height="104" rx="12" fill="#ffffff" stroke="#d3ebdd"/>
+            <rect x="258" y="142" width="196" height="104" rx="12" fill="#ffffff" stroke="#d3ebdd"/>
+            <circle cx="86" cy="86" r="20" fill="#cfeedc"/>
+            <circle cx="160" cy="86" r="20" fill="#cfeedc"/>
+            <rect x="56" y="132" width="136" height="10" rx="5" fill="#d3ebdd"/>
+            <rect x="56" y="154" width="108" height="10" rx="5" fill="#e3f2ea"/>
+            <path d="M64 196c18 14 62 14 80 0" stroke="#1f7a4d" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <rect x="282" y="48" width="120" height="10" rx="5" fill="#d3ebdd"/>
+            <rect x="282" y="70" width="84" height="10" rx="5" fill="#e3f2ea"/>
+            <rect x="282" y="166" width="140" height="10" rx="5" fill="#d3ebdd"/>
+            <rect x="282" y="188" width="96" height="10" rx="5" fill="#e3f2ea"/>
+            <circle cx="422" cy="60" r="12" fill="#f6d9a8"/>
+          </svg>
+        </div>
+        <div class="caption"><strong>分类 → 作品 → 章节</strong><span>三步进入阅读</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick entries -->
+  <section id="entries" aria-labelledby="entriesTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Quick Entry</p>
+        <h2 id="entriesTitle">四个常用阅读入口</h2>
+        <p>不同读者打开漫蛙漫画免费阅读的目的并不相同：有人追更新，有人补旧作，有人只想随便翻翻。下面按使用场景划分入口，点击可直达对应分类区。</p>
+      </div>
+      <div class="entries">
+        <a class="entry" href="#categories" data-jump="连载更新">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h9a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M16 8h4v11h-4"/></svg>
+          </span>
+          <h3>追连载更新</h3>
+          <p>优先看仍在更新的作品，按更新节奏安排阅读顺序。</p>
+        </a>
+        <a class="entry" href="#categories" data-jump="完结佳作">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16l-7-4-7 4z"/></svg>
+          </span>
+          <h3>补完结作品</h3>
+          <p>一次读完整段故事，适合不想等更新的读者。</p>
+        </a>
+        <a class="entry" href="#categories" data-jump="短篇精选">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </span>
+          <h3>短篇速读</h3>
+          <p>篇幅短、节奏快，适合通勤或睡前的碎片时间。</p>
+        </a>
+        <a class="entry" href="#categories" data-jump="分类浏览">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
+          </span>
+          <h3>按分类浏览</h3>
+          <p>不带着明确目标时，从题材标签里挑一个方向进入。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" aria-labelledby="catTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Browse</p>
+        <h2 id="catTitle">漫画分类与筛选</h2>
+        <p>用题材标签缩小范围，或在搜索框输入作品名关键词。筛选只作用于下方卡片列表，不改变页面其他内容，结果即时显示。</p>
+      </div>
+
+      <div class="cat-layout">
+        <div class="tools">
+          <label for="searchBox" class="sr-only" style="position:absolute;left:-9999px;">搜索漫画</label>
+          <input type="search" id="searchBox" placeholder="输入作品名或关键词，如：治愈、悬疑" autocomplete="off">
+          <div class="chips" id="chips" role="group" aria-label="题材筛选">
+            <button class="chip" type="button" data-filter="全部" aria-pressed="true">全部</button>
+            <button class="chip" type="button" data-filter="连载更新" aria-pressed="false">连载更新</button>
+            <button class="chip" type="button" data-filter="完结佳作" aria-pressed="false">完结佳作</button>
+            <button class="chip" type="button" data-filter="短篇精选" aria-pressed="false">短篇精选</button>
+            <button class="chip" type="button" data-filter="分类浏览" aria-pressed="false">分类浏览</button>
+          </div>
+        </div>
+
+        <div class="cards" id="cardList">
+          <article class="card" data-cat="连载更新" data-words="治愈 日常 校园 连载 新章节">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><circle cx="96" cy="70" r="26" fill="#cfeedc"/><circle cx="180" cy="70" r="26" fill="#cfeedc"/><path d="M84 118c22 18 68 18 90 0" stroke="#1f7a4d" stroke-width="6" fill="none" stroke-linecap="round"/><rect x="228" y="44" width="60" height="8" rx="4" fill="#d3ebdd"/><rect x="228" y="62" width="44" height="8" rx="4" fill="#e3f2ea"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">连载更新</span><span class="tag">治愈日常</span></div>
+              <h3>课后十分钟</h3>
+              <p>校园日常短篇连载，围绕社团活动展开，每话相对独立，适合每天睡前读一段。</p>
+              <div class="meta"><span>状态：连载中</span><span>校园 · 日常</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="完结佳作" data-words="奇幻 冒险 完结 长篇">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><path d="M60 140l40-70 40 70z" fill="#cfeedc"/><path d="M150 140l46-84 46 84z" fill="#bfe2cf"/><circle cx="252" cy="58" r="18" fill="#f6d9a8"/><rect x="52" y="150" width="216" height="8" rx="4" fill="#d3ebdd"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">完结佳作</span><span class="tag">奇幻冒险</span></div>
+              <h3>北岸灯塔</h3>
+              <p>已完结的长篇奇幻故事，从港口小镇出发，适合想一次读完完整主线的读者。</p>
+              <div class="meta"><span>状态：已完结</span><span>奇幻 · 冒险</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="短篇精选" data-words="悬疑 短篇 反转 深夜">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><circle cx="160" cy="86" r="46" fill="none" stroke="#1f7a4d" stroke-width="6"/><path d="M160 120v20" stroke="#1f7a4d" stroke-width="6" stroke-linecap="round"/><rect x="46" y="40" width="52" height="8" rx="4" fill="#d3ebdd"/><rect x="224" y="132" width="52" height="8" rx="4" fill="#d3ebdd"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">短篇精选</span><span class="tag">悬疑反转</span></div>
+              <h3>凌晨三点的门铃</h3>
+              <p>单话完结的悬疑短篇，篇幅控制在一刻钟内，结尾留有一处反转。</p>
+              <div class="meta"><span>状态：单话完结</span><span>悬疑 · 短篇</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="分类浏览" data-words="美食 温馨 治愈 季节">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><ellipse cx="160" cy="112" rx="66" ry="20" fill="#cfeedc"/><path d="M104 112c0-30 24-52 56-52s56 22 56 52" fill="#e3f2ea" stroke="#1f7a4d" stroke-width="4"/><circle cx="160" cy="56" r="10" fill="#f6d9a8"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">分类浏览</span><span class="tag">美食温馨</span></div>
+              <h3>一碗热汤的距离</h3>
+              <p>以食物串起邻里关系的温馨系列，按季节分组，每篇可独立阅读。</p>
+              <div class="meta"><span>状态：持续更新</span><span>美食 · 温馨</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="连载更新" data-words="运动 热血 少年 连载">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><circle cx="160" cy="90" r="42" fill="none" stroke="#1f7a4d" stroke-width="5"/><path d="M118 90h84M160 48v84" stroke="#bfe2cf" stroke-width="5"/><circle cx="160" cy="90" r="9" fill="#f6d9a8"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">连载更新</span><span class="tag">运动热血</span></div>
+              <h3>第二回合</h3>
+              <p>少年竞技题材连载，章节按比赛进程推进，适合喜欢连续追更的读者。</p>
+              <div class="meta"><span>状态：连载中</span><span>运动 · 热血</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="分类浏览" data-words="科幻 城市 设定 单元">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#eef8f2"/><rect x="66" y="80" width="40" height="62" fill="#cfeedc"/><rect x="118" y="58" width="40" height="84" fill="#bfe2cf"/><rect x="170" y="94" width="40" height="48" fill="#cfeedc"/><circle cx="240" cy="56" r="16" fill="#f6d9a8"/><rect x="52" y="146" width="216" height="8" rx="4" fill="#d3ebdd"/></svg>
+            </div>
+            <div class="body">
+              <div class="tagrow"><span class="tag">分类浏览</span><span class="tag">科幻单元</span></div>
+              <h3>城市上空的气象站</h3>
+              <p>单元式科幻故事，每个章节换一位主角，世界观共用，可任意顺序阅读。</p>
+              <div class="meta"><span>状态：单元更新</span><span>科幻 · 城市</span></div>
+            </div>
+          </article>
+
+          <div class="empty" id="emptyTip" hidden>没有匹配的作品，换个关键词或点“全部”看看。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to read -->
+  <section id="howto" aria-labelledby="howTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Reading Path</p>
+        <h2 id="howTitle">在漫蛙漫画免费阅读里怎么读</h2>
+        <p>阅读路径保持简单：先定位作品，再进入章节，最后按顺序连续翻阅。下面把每一步的注意点写清楚，避免在新入口里迷路。</p>
+      </div>
+
+      <div class="read-grid">
+        <ol class="steps">
+          <li>
+            <span class="num">1</span>
+            <div>
+              <h3>先确认作品信息</h3>
+              <p>在分类卡片上先看题材标签与连载状态，再决定是否进入。状态为“连载中”的作品需要按更新节奏追读，“已完结”则可以连续看完。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <div>
+              <h3>用搜索与标签缩小范围</h3>
+              <p>输入作品名片段或题材词即可过滤卡片；标签按钮与搜索可以组合使用。若结果为空，页面会给出提示，点“全部”即可恢复完整列表。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <div>
+              <h3>进入章节连续阅读</h3>
+              <p>作品页通常按话数排列，建议从第一话开始顺序阅读；短篇与单元故事可跳读。阅读时留意章节末的上一话、下一话入口。</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <div>
+              <h3>记录进度再回来</h3>
+              <p>连载作品更新周期不固定，可用浏览器书签收藏章节页，下次打开直接续读，减少重复查找的时间。</p>
+            </div>
+          </li>
+        </ol>
+
+        <aside class="aside-box">
+          <h3>阅读前可先看这几点</h3>
+          <p>漫蛙漫画免费阅读以在线阅读为主，页面本身不存放作品文件，入口仅用于导航到分类与章节。</p>
+          <ul>
+            <li>优先选择题材明确、状态清晰的作品，减少试读成本。</li>
+            <li>短篇适合碎片时间，长篇适合整段空闲。</li>
+            <li>移动端阅读时适当调大字号，减轻长时间翻页的眼睛负担。</li>
+            <li>遇到加载缓慢，先刷新页面再切换章节。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes -->
+  <section id="notes" class="notes" aria-labelledby="notesTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Notes</p>
+        <h2 id="notesTitle">使用说明与内容边界</h2>
+        <p>为了让漫蛙漫画免费阅读的入口更清楚，这里说明页面的定位、内容范围与更新方式，避免对功能产生误解。</p>
+      </div>
+      <div class="note-grid">
+        <div class="note">
+          <h3>页面定位</h3>
+          <p>本页是漫蛙漫画免费阅读的主题首页，承担分类导航与阅读方式说明的职责，本身不提供章节内容，也不存储漫画图片。</p>
+        </div>
+        <div class="note">
+          <h3>分类与筛选</h3>
+          <p>卡片中的题材与状态为示例性归类，用于演示筛选逻辑。搜索与标签筛选在页面内即时生效，不跳转外部地址。</p>
+        </div>
+        <div class="note">
+          <h3>下载入口</h3>
+          <p>页面上的“下载”按钮当前为占位状态，尚未关联真实文件，因此保持禁用。后续替换地址后再开放使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#cfe6da" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8.5" cy="9" r="1.6" fill="#cfe6da" stroke="none"/>
+              <circle cx="15.5" cy="9" r="1.6" fill="#cfe6da" stroke="none"/>
+              <path d="M7 15c2.6 2 7.4 2 10 0"/>
+            </svg>
+          </span>
+          漫蛙漫画免费阅读
+        </div>
+        <p>漫蛙漫画免费阅读主题首页，集中呈现阅读入口、漫画分类与阅读方式说明，帮助读者更快找到想看的作品。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#entries">阅读入口</a>
+        <a href="#categories">漫画分类</a>
+        <a href="#howto">阅读方式</a>
+        <a href="#notes">使用说明</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 漫蛙漫画免费阅读 · 主题首页</span>
+      <span>内容以导航与阅读说明为主</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var chips = Array.prototype.slice.call(document.querySelectorAll('#chips .chip'));
+  var searchBox = document.getElementById('searchBox');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cardList .card'));
+  var emptyTip = document.getElementById('emptyTip');
+  var activeFilter = '全部';
+
+  function apply(){
+    var kw = (searchBox.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var cat = card.getAttribute('data-cat') || '';
+      var words = (card.getAttribute('data-words') || '') + ' ' + card.textContent;
+      var okCat = activeFilter === '全部' || cat === activeFilter;
+      var okKw = !kw || words.toLowerCase().indexOf(kw) > -1;
+      var show = okCat && okKw;
+      card.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    emptyTip.hidden = shown !== 0;
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      activeFilter = chip.getAttribute('data-filter');
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      apply();
+    });
+  });
+
+  searchBox.addEventListener('input', apply);
+
+  // 快捷入口：滚动到分类并设置对应筛选
+  document.querySelectorAll('[data-jump]').forEach(function(link){
+    link.addEventListener('click', function(){
+      var target = link.getAttribute('data-jump');
+      var chip = chips.filter(function(c){ return c.getAttribute('data-filter') === target; })[0];
+      if(chip){ chip.click(); }
+    });
+  });
+})();
+</script>
+</body>
+                                                                                                                                                     </html>
