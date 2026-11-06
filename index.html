@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心小欣奈-糖心小欣奈主页_糖心小欣奈风格影像</title>
+<meta name="description" content="糖心小欣奈主题首页，收录糖心小欣奈的影像风格索引、内容分区与观看入口，说明其甜美系视觉特征与浏览方式，帮助访客快速找到想看的糖心小欣奈相关内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff7fa8'/%3E%3Cstop offset='1' stop-color='%23ffc48a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 47c-9-6-15-11-15-18a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 7-6 12-15 18z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --rose:#ff6f9c;
+  --rose-deep:#e14b7a;
+  --peach:#ffb489;
+  --ink:#2b2230;
+  --ink-soft:#6a5d6f;
+  --cream:#fff7f4;
+  --card:#ffffff;
+  --line:#f3dcd9;
+  --radius:20px;
+  --shadow:0 10px 30px rgba(226,120,150,.12);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:30;
+  background:rgba(255,247,244,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;}
+.brand .mark{width:38px;height:38px;flex:0 0 auto;}
+.brand span{font-size:19px;background:linear-gradient(90deg,var(--rose-deep),var(--peach));-webkit-background-clip:text;background-clip:text;color:transparent;}
+nav.links{display:flex;gap:6px;flex-wrap:wrap;}
+nav.links a{
+  font-size:14.5px;padding:7px 13px;border-radius:999px;color:var(--ink-soft);
+  transition:.2s;
+}
+nav.links a:hover{background:#ffe6ec;color:var(--rose-deep);}
+
+/* hero */
+.hero{padding:54px 0 40px;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--rose-deep);background:#ffe9ef;
+  padding:6px 14px;border-radius:999px;font-weight:600;letter-spacing:.4px;
+}
+h1{
+  font-size:clamp(30px,4.6vw,50px);
+  line-height:1.2;margin:16px 0 6px;letter-spacing:.5px;
+  background:linear-gradient(100deg,var(--rose-deep) 10%,#ff8fb2 50%,var(--peach) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:16.5px;color:var(--ink-soft);margin:12px 0 26px;max-width:38em;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:15px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(100deg,var(--rose),var(--rose-deep));color:#fff;box-shadow:0 8px 20px rgba(225,75,122,.28);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--rose-deep);}
+.btn-ghost:hover{background:#ffeef3;}
+.hero-art{
+  position:relative;border-radius:26px;overflow:hidden;
+  box-shadow:var(--shadow);background:#fff;
+}
+.hero-art svg{width:100%;height:auto;}
+.hero-badge{
+  position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92);
+  padding:7px 14px;border-radius:999px;font-size:12.5px;color:var(--rose-deep);font-weight:700;
+  border:1px solid #ffd7e2;
+}
+
+/* section base */
+section{padding:44px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,27px);margin:0 0 8px;letter-spacing:.3px;
+}
+.sec-head h2 em{font-style:normal;color:var(--rose-deep);}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15px;max-width:46em;}
+
+/* grid cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:0 6px 18px rgba(226,120,150,.06);
+  display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.card .ico{width:42px;height:42px;border-radius:12px;background:#ffeaf0;display:grid;place-items:center;}
+.card h3{margin:0;font-size:16.5px;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.7;}
+.card .tag{font-size:12px;font-weight:700;color:var(--rose-deep);background:#fff0f4;border-radius:999px;padding:3px 10px;align-self:flex-start;}
+
+/* filter */
+.filters{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin-bottom:22px;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:14px 16px;
+}
+.filters label{font-size:13.5px;color:var(--ink-soft);font-weight:600;}
+.filters input{
+  flex:1 1 200px;min-width:160px;border:1px solid var(--line);border-radius:10px;
+  padding:9px 13px;font-size:14px;font-family:inherit;background:#fffdfc;color:var(--ink);
+}
+.filters input:focus{outline:2px solid #ffd0dd;border-color:#ffb6c9;}
+.chip{
+  font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+  background:#fff;color:var(--ink-soft);cursor:pointer;font-family:inherit;transition:.18s;
+}
+.chip.active,.chip:hover{background:linear-gradient(100deg,var(--rose),var(--rose-deep));color:#fff;border-color:transparent;}
+
+/* list */
+.list{display:grid;gap:14px;}
+.row{
+  display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+  transition:.2s;
+}
+.row:hover{border-color:#ffc5d6;background:#fffafb;}
+.row .num{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(140deg,#ffe3ec,#ffeede);color:var(--rose-deep);
+  font-weight:800;font-size:17px;
+}
+.row h4{margin:0 0 3px;font-size:15.5px;}
+.row p{margin:0;font-size:13.8px;color:var(--ink-soft);}
+.row .meta{font-size:12.5px;color:var(--rose-deep);font-weight:700;white-space:nowrap;}
+.empty{display:none;color:var(--ink-soft);font-size:14px;padding:18px;text-align:center;}
+
+/* about */
+.about{
+  display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;
+  box-shadow:var(--shadow);
+}
+.about h2{margin:0 0 12px;font-size:23px;}
+.about p{margin:0 0 12px;font-size:15px;color:var(--ink-soft);}
+.about ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft);}
+.about ul li{margin-bottom:6px;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.stat{
+  border-radius:16px;padding:18px;text-align:center;
+  background:linear-gradient(150deg,#fff0f5,#fff6ee);border:1px solid #ffe1e9;
+}
+.stat b{display:block;font-size:26px;color:var(--rose-deep);letter-spacing:.5px;}
+.stat span{font-size:12.8px;color:var(--ink-soft);}
+
+/* download */
+.dl{
+  display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  background:linear-gradient(110deg,#fff0f5,#fff7f0);
+  border:1px solid #ffdbe6;border-radius:24px;padding:30px 34px;
+}
+.dl h2{margin:0 0 8px;font-size:22px;}
+.dl p{margin:0;font-size:14.5px;color:var(--ink-soft);max-width:44em;}
+.btn-dl{
+  background:linear-gradient(100deg,var(--rose),var(--rose-deep));color:#fff;
+  padding:13px 30px;border-radius:999px;font-weight:800;font-size:15px;
+  box-shadow:0 8px 20px rgba(225,75,122,.28);
+  pointer-events:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-dl[aria-disabled="true"]{opacity:.92;}
+
+/* footer */
+footer.site{
+  margin-top:30px;background:#2b2230;color:#e9dfe3;padding:38px 0 26px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;}
+footer.site .brand span{color:#ffd0dd;}
+footer.site p{font-size:13.5px;color:#b9a9b1;margin:10px 0 0;line-height:1.8;}
+footer.site h5{margin:0 0 10px;font-size:14px;color:#fff;letter-spacing:.4px;}
+footer.site a{display:block;font-size:13.5px;color:#c9b9c1;padding:3px 0;transition:.2s;}
+footer.site a:hover{color:#ff9dba;}
+.copy{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;
+  font-size:12.5px;color:#9d8d96;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .hero{padding:34px 0 26px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .about{grid-template-columns:1fr;padding:26px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:620px){
+  body{font-size:15.5px;}
+  .nav{flex-direction:column;align-items:flex-start;gap:8px;padding:12px 0;}
+  nav.links a{padding:6px 11px;font-size:13.5px;}
+  .cards{grid-template-columns:1fr;}
+  .row{grid-template-columns:48px 1fr;gap:12px;}
+  .row .meta{grid-column:2;justify-self:start;}
+  .row .num{width:44px;height:44px;border-radius:12px;font-size:15px;}
+  .dl{padding:24px;}
+  .foot-grid{grid-template-columns:1fr;}
+  section{padding:34px 0;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="糖心小欣奈首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff6f9c"/>
+            <stop offset="1" stop-color="#ffb489"/>
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="16" fill="url(#lg)"/>
+        <path d="M32 47c-9-6-15-11-15-18a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 7-6 12-15 18z" fill="#fff"/>
+        <circle cx="24" cy="24" r="2.4" fill="#ff6f9c"/>
+        <circle cx="40" cy="24" r="2.4" fill="#ffb489"/>
+      </svg>
+      <span>糖心小欣奈</span>
+    </a>
+    <nav class="links" aria-label="主导航">
+      <a href="#styles">风格分区</a>
+      <a href="#index">内容索引</a>
+      <a href="#about">关于糖心小欣奈</a>
+      <a href="#download">资源下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 15.4 12 20 12 20z" fill="#e14b7a"/></svg>
+          甜美系影像风格主页
+        </span>
+        <h1>糖心小欣奈</h1>
+        <p class="lead">糖心小欣奈是一个以甜美、柔和与日常氛围为核心的影像风格主题。这里按风格、场景与内容类型整理糖心小欣奈的相关分区，方便你从首页直接进入感兴趣的部分，并了解这一风格的视觉特点与浏览方式。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#styles">进入风格分区</a>
+          <a class="btn btn-ghost" href="#index">查看内容索引</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 460 380" role="img" aria-label="糖心小欣奈主题插画：柔和粉调的相框与爱心">
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffe6ee"/>
+              <stop offset="1" stop-color="#fff3e6"/>
+            </linearGradient>
+            <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8fb2"/>
+              <stop offset="1" stop-color="#ffb489"/>
+            </linearGradient>
+          </defs>
+          <rect width="460" height="380" fill="url(#bg1)"/>
+          <circle cx="360" cy="80" r="70" fill="#ffd6e2" opacity=".7"/>
+          <circle cx="90" cy="310" r="86" fill="#ffe4cf" opacity=".75"/>
+          <rect x="120" y="86" width="220" height="180" rx="20" fill="#fff" stroke="#ffcdd9" stroke-width="3"/>
+          <circle cx="190" cy="150" r="26" fill="#ffd0dd"/>
+          <circle cx="272" cy="150" r="26" fill="#ffe0c9"/>
+          <path d="M168 200c14 12 30 12 44 0" stroke="#e14b7a" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M230 236c-22-14-37-26-37-43a19 19 0 0 1 37-9 19 19 0 0 1 37 9c0 17-15 29-37 43z" fill="url(#bg2)"/>
+          <circle cx="150" cy="300" r="10" fill="#ff9dba" opacity=".7"/>
+          <circle cx="330" cy="286" r="14" fill="#ffc9a8" opacity=".8"/>
+          <circle cx="300" cy="330" r="7" fill="#ff9dba" opacity=".6"/>
+        </svg>
+        <span class="hero-badge">糖心小欣奈 · 风格索引</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLES -->
+  <section id="styles">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>按<em>风格</em>浏览糖心小欣奈</h2>
+        <p>糖心小欣奈的内容通常围绕几个稳定的视觉方向展开。下列分区依据常见的画面特征划分，每个分区说明它适合什么样的观看需求，避免在同一种表达上反复堆叠。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 15.4 12 20 12 20z" fill="#e14b7a"/></svg></div>
+          <span class="tag">柔和日常</span>
+          <h3>甜系日常片段</h3>
+          <p>以浅色背景、自然光和近距离构图为主，强调放松的生活感。适合想快速浏览糖心小欣奈日常氛围的访客，节奏偏轻，单条内容信息量克制。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#e14b7a" stroke-width="2"/><circle cx="12" cy="12" r="3.4" fill="#e14b7a"/></svg></div>
+          <span class="tag">人物特写</span>
+          <h3>镜头与表情</h3>
+          <p>侧重面部表情与情绪表达，画面色彩饱和度较高。这一分区适合关注糖心小欣奈人物呈现细节的观众，也便于对照不同拍摄角度带来的观感差异。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3" stroke="#e14b7a" stroke-width="2"/><path d="M4 15l4.5-4 4 3.5L16 11l4 4" stroke="#e14b7a" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <span class="tag">场景氛围</span>
+          <h3>室内与街景</h3>
+          <p>把人物放进具体的空间里，用窗边、沙发、街角等场景补充故事感。适合喜欢完整画面而非单点特写的访客，也是糖心小欣奈风格中变化较多的一类。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDEX -->
+  <section id="index">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>糖心小欣奈<em>内容索引</em></h2>
+        <p>下面的条目按主题方向排列，可用关键词筛选或按标签切换。索引只描述内容方向与观看侧重，不涉及具体发布时间的承诺，便于你按兴趣定位后再进入对应分区。</p>
+      </div>
+
+      <div class="filters">
+        <label for="q">筛选</label>
+        <input id="q" type="search" placeholder="输入关键词，例如：日常、特写、街景" autocomplete="off">
+        <button class="chip active" data-tag="all" type="button">全部</button>
+        <button class="chip" data-tag="日常" type="button">日常</button>
+        <button class="chip" data-tag="特写" type="button">特写</button>
+        <button class="chip" data-tag="场景" type="button">场景</button>
+      </div>
+
+      <div class="list" id="list">
+        <article class="row" data-tag="日常" data-text="柔光日常 居家片段 浅色背景 轻节奏">
+          <div class="num">01</div>
+          <div>
+            <h4>柔光日常 · 居家片段</h4>
+            <p>浅色背景与自然光下的生活化画面，重点是放松的状态与轻节奏，适合初次了解糖心小欣奈风格的访客。</p>
+          </div>
+          <span class="meta">日常</span>
+        </article>
+        <article class="row" data-tag="特写" data-text="人物特写 表情细节 构图 色彩">
+          <div class="num">02</div>
+          <div>
+            <h4>人物特写 · 表情与构图</h4>
+            <p>近距离呈现表情变化与构图选择，色彩更饱满。可用于观察糖心小欣奈影像中人物表达的处理方式。</p>
+          </div>
+          <span class="meta">特写</span>
+        </article>
+        <article class="row" data-tag="场景" data-text="街景 窗边 空间 故事感 场景氛围">
+          <div class="num">03</div>
+          <div>
+            <h4>街景与窗边 · 空间叙事</h4>
+            <p>借助窗边、街角等真实空间补足画面信息，让人物与环境形成呼应，属于糖心小欣奈风格里层次较丰富的一类。</p>
+          </div>
+          <span class="meta">场景</span>
+        </article>
+        <article class="row" data-tag="日常" data-text="浅色穿搭 搭配 配色 甜系">
+          <div class="num">04</div>
+          <div>
+            <h4>浅色穿搭 · 配色参考</h4>
+            <p>以粉、米、奶白为主的配色组合，说明甜系视觉在服装上的常见处理，便于对照糖心小欣奈相关画面的整体色调。</p>
+          </div>
+          <span class="meta">日常</span>
+        </article>
+        <article class="row" data-tag="场景" data-text="室内 布景 道具 氛围光">
+          <div class="num">05</div>
+          <div>
+            <h4>室内布景 · 氛围光</h4>
+            <p>通过台灯、纱帘与浅色家具营造柔和氛围，展示场景如何影响画面情绪，也是理解糖心小欣奈视觉语言的切入点。</p>
+          </div>
+          <span class="meta">场景</span>
+        </article>
+        <article class="row" data-tag="特写" data-text="镜头角度 半身 全身 视角">
+          <div class="num">06</div>
+          <div>
+            <h4>镜头角度 · 视角对照</h4>
+            <p>对比半身、全身与低角度拍摄的差异，帮助访客判断不同视角下的观感，适合对拍摄方式有兴趣的读者。</p>
+          </div>
+          <span class="meta">特写</span>
+        </article>
+      </div>
+      <p class="empty" id="empty">没有匹配的条目，试试更短的关键词，或切换上方标签。</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <h2>关于糖心小欣奈这一主题</h2>
+          <p>糖心小欣奈并非单一作品名，而是一组在视觉上彼此接近的影像风格的统称：低饱和的粉色基调、自然柔光、生活化场景与近距离构图。理解这几点，就能较快判断某一内容是否属于这一风格。</p>
+          <p>本站把糖心小欣奈的相关内容按风格与场景归类，减少在大量条目中盲找的时间。索引中的描述只说明画面方向，不替代实际观看；不同分区之间会有交叉，例如日常片段也可能包含特写镜头。</p>
+          <ul>
+            <li>色调：粉、米、奶白为主，避免高对比强光。</li>
+            <li>构图：近景与半身居多，强调表情与手部细节。</li>
+            <li>场景：居家、窗边、街角等真实空间。</li>
+            <li>节奏：单条内容时长与信息量偏轻，适合碎片浏览。</li>
+          </ul>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><b>3</b><span>核心风格分区</span></div>
+          <div class="stat"><b>6</b><span>内容索引条目</span></div>
+          <div class="stat"><b>4</b><span>视觉特征维度</span></div>
+          <div class="stat"><b>1</b><span>统一主题入口</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2>糖心小欣奈资源包</h2>
+          <p>资源包汇总了本站索引中提到的风格说明与配色参考，方便离线查看。当前版本仍在上传准备中，按钮暂不可用；正式地址开放后此处会同步更新。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff9dba"/>
+                <stop offset="1" stop-color="#ffc9a8"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="16" fill="url(#lg2)"/>
+            <path d="M32 47c-9-6-15-11-15-18a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 7-6 12-15 18z" fill="#fff"/>
+          </svg>
+          <span>糖心小欣奈</span>
+        </div>
+        <p>糖心小欣奈主题首页，按风格与场景整理甜美系影像内容，提供清晰的浏览路径与视觉特征说明。</p>
+      </div>
+      <div>
+        <h5>页面导航</h5>
+        <a href="#styles">风格分区</a>
+        <a href="#index">内容索引</a>
+        <a href="#about">关于本主题</a>
+        <a href="#download">资源下载</a>
+      </div>
+      <div>
+        <h5>浏览提示</h5>
+        <a href="#index">按关键词筛选</a>
+        <a href="#styles">对照配色说明</a>
+        <a href="#about">了解视觉特征</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 糖心小欣奈主题首页 · 内容为风格索引与说明</span>
+      <span>糖心小欣奈 · 柔和甜美影像风格</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var list = document.getElementById('list');
+  var empty = document.getElementById('empty');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var rows = Array.prototype.slice.call(list.querySelectorAll('.row'));
+  var activeTag = 'all';
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(r){
+      var tag = r.getAttribute('data-tag');
+      var text = (r.getAttribute('data-text') || '') + r.textContent;
+      var okTag = activeTag === 'all' || tag === activeTag;
+      var okKw = !kw || text.toLowerCase().indexOf(kw) !== -1;
+      var show = okTag && okKw;
+      r.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      activeTag = c.getAttribute('data-tag');
+      apply();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
